@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Greetings</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(-45deg, #3494e6, #ec6ead, #3cba92);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #333;
+            text-align: center;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .container {
+            position: relative;
+            padding: 40px;
+            background-color: #f0f0f0;
+            /* Updated background color */
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+            max-width: 400px;
+            width: 90%;
+            overflow: hidden;
+        }
+
+        h1,
+        h2,
+        p,
+        button,
+        textarea {
+            margin-top: 10px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #e8491d;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        button,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            background-color: #e8491d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #4caf50;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Happy New Year 2024</h1>
+        <h2 id="show"> </h2>
+        <p>Wishing you a year filled with joy, success, and new opportunities! 🎉</p>
+        <button onclick="navigateToAnotherPage()">Create Your Own >></button>
+        <textarea id="pageLink" readonly placeholder="Create Your Own.>> Generate Link. >> Copy Code."></textarea>
+        <button onclick="generateLink()">Generate Link</button>
+        <button onclick="copyLink()">Copy Link</button>
+    </div>
+    <script>
+        url= new URLSearchParams(window.location.search);
+         var name = url.get("pid");
+        // // document.getElementById('show-name').innerHTML=name;
+        fname= atob(name);
+        // document.write(fname);
+        document.getElementById("show").innerHTML = fname;
+
+        function navigateToAnotherPage() {
+            // You can replace the URL with the actual destination
+            window.location.href = 'second-page.html';
+        }
+
+        function generateLink() {
+            const pageLink = window.location.href;
+            document.getElementById('pageLink').value = pageLink;
+
+            // const textarea = document.getElementById('pageLink');
+            // const generatedLink = 'https://yourwebsite.com/your-page'; // Replace with your logic to generate a dynamic link
+            // textarea.value = generatedLink;
+        }
+
+        function copyLink() {
+            const textarea = document.getElementById('pageLink');
+            textarea.select();
+            document.execCommand('copy');
+            alert('Link copied to clipboard!');
+        }
+    </script>
+
+</body>
+
+</html>

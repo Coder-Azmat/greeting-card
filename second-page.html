@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, #2d90e6, #ea5ba3);
+            background-size: 400% 400%;
+            animation: gradientBG 5s ease infinite;
+            color: #fff;
+            text-align: center;
+        }
+
+        #greeting {
+            font-size: 2em;
+            color: #fff;
+            animation: pulse 1s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.1);
+            }
+        }
+
+
+        #container {
+            max-width: 600px;
+            padding: 20px;
+            background: rgb(239 12 12 / 80%);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #backgroundShapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: 60%;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            transition: background 0.3s ease-in-out;
+
+        }
+
+        input:hover {
+            transform: scale(1.1);
+        }
+
+        input:hover,
+        input:focus {
+            background: rgba(255, 255, 255, 0.648);
+
+        }
+
+        input::placeholder {
+            color: rgba(198, 73, 73, 0.564);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #e8491d;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #4caf50;
+            transform: scale(1.1);
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .shape {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: rotate linear infinite;
+        }
+
+        .circle {
+            width: 20px;
+            height: 20px;
+        }
+
+        .star {
+            width: 20px;
+            height: 20px;
+            clip-path: polygon(
+                50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%
+            );
+        }
+
+    Adjust the position and size of shapes as needed 
+        .shape:nth-child(1) {
+            top: 10%;
+            left: 20%;
+        }
+
+        .shape:nth-child(2) {
+            top: 30%;
+            left: 70%;
+        }
+
+        .shape:nth-child(3) {
+            top: 50%;
+            left: 40%;
+        }
+
+        .shape:nth-child(4) {
+            top: 80%;
+            left: 80%;
+        } */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .shape {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: rotate linear infinite, moveUpDown 2s infinite;
+
+        }
+
+        .circle {
+            width: 20px;
+            height: 20px;
+            animation-duration: 10s;
+        }
+
+        @keyframes moveUpDown {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(370px);
+            }
+        }
+
+        .star {
+            width: 20px;
+            height: 20px;
+            clip-path: polygon(50% 0%,
+                    61% 35%,
+                    98% 35%,
+                    68% 57%,
+                    79% 91%,
+                    50% 70%,
+                    21% 91%,
+                    32% 57%,
+                    2% 35%,
+                    39% 35%);
+            animation: rotate linear infinite;
+            animation-duration: 7s;
+        }
+
+        /* Adjust the position and size of shapes as needed */
+        .shape:nth-child(1) {
+            top: 8%;
+            left: 20%;
+        }
+
+        .shape:nth-child(2) {
+            top: 20%;
+            left: 70%;
+        }
+
+        .shape:nth-child(3) {
+            top: 45%;
+            left: 20%;
+        }
+
+        .shape:nth-child(4) {
+            top: 70%;
+            left: 30%;
+        }
+
+        .shape:nth-child(5) {
+            top: 55%;
+            left: 75%;
+        }
+
+        .shape:nth-child(6) {
+            top: 80%;
+            left: 80%;
+        }
+
+        .shape:nth-child(7) {
+            top: 10%;
+            left: 50%;
+        }
+    </style>
+</head>
+
+<body>
+        <!-- Add some shapes here -->
+        <div class="shape star"></div>
+        <div class="shape star"></div>
+        <div class="shape star"></div>
+        <div class="shape star"></div>
+        <div class="shape star"></div>
+        <div class="shape star"></div>
+        <div class="shape circle"></div>
+        </div>
+        <div id="container">
+            <h2 id="greeting">Welcome To 2️⃣K2️⃣4️⃣</h2>
+            <h2 id="show-name"> </h2>
+            <label for="receiverName">Enter Your Name:</label>
+            <input type="text" id="receiverName" placeholder="e.g: Azmat alli khan">
+            <br>
+            <button onclick="show('Azmat')">Next >></button>
+            <p id="wishOutput"></p>
+            <p id="demo"></p>
+            
+        </div>
+    
+    <script>
+        function show() {
+            var pid= document.getElementById('receiverName').value;
+            document.write(pid);
+            p=btoa(pid);
+            window.location="index.html?pid="+p;
+            // var receiverName = document.getElementById('receiverName').value;
+            //    var wishMessage= window.location.href;
+            // document.getElementById('wishOutput').innerHTML = wishMessage;
+
+        }
+    </script>
+</body>
+
+</html>
