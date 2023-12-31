@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Greetings</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #2d90e6, #ea5ba3);
+            background-size: 400% 400%;
+            animation: gradientBG 5s ease infinite;
+            color: #333;
+            text-align: center;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .container {
+            position: relative;
+            padding: 40px;
+            background-color: #f0f0f0;
+            /* Updated background color */
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+            max-width: 400px;
+            width: 90%;
+            overflow: hidden;
+        }
+
+        #backgroundShapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        h1,
+        h2,
+        p,
+        button,
+        textarea {
+            margin-top: 10px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #18a11e;
+        }
+
+        #greeting {
+            font-size: 2em;
+            animation: pulse 1s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.1);
+            }
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+            color: #333;
+            text-transform: uppercase;
+            /* color: rgb(63, 94, 251); */
+            /* color: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(255, 47, 96, 1) 100%); */
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        button,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            background-color: #18a11e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #e8491d;
+            transform: scale(1.05);
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .shape {
+            position: absolute;
+            background-color: rgb(255 21 21);
+            border-radius: 50%;
+            animation: rotate linear infinite, moveUpDown 2s infinite;
+            z-index: 1;
+        }
+
+        .circle {
+            width: 20px;
+            height: 20px;
+            animation-duration: 10s;
+        }
+
+        @keyframes moveUpDown {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(370px);
+            }
+        }
+
+        .star {
+            width: 20px;
+            height: 20px;
+            clip-path: polygon(50% 0%,
+                    61% 35%,
+                    98% 35%,
+                    68% 57%,
+                    79% 91%,
+                    50% 70%,
+                    21% 91%,
+                    32% 57%,
+                    2% 35%,
+                    39% 35%);
+            animation: rotate linear infinite;
+            animation-duration: 7s;
+        }
+
+        /* Adjust the position and size of shapes as needed */
+        .shape:nth-child(1) {
+            top: 8%;
+            left: 20%;
+        }
+
+        .shape:nth-child(2) {
+            top: 20%;
+            left: 70%;
+        }
+
+        .shape:nth-child(3) {
+            top: 45%;
+            left: 20%;
+        }
+
+        .shape:nth-child(4) {
+            top: 70%;
+            left: 30%;
+        }
+
+        .shape:nth-child(5) {
+            top: 55%;
+            left: 75%;
+        }
+
+        .shape:nth-child(6) {
+            top: 80%;
+            left: 80%;
+        }
+
+        .shape:nth-child(7) {
+            top: 10%;
+            left: 50%;
+        }
+
+        #thank {
+            font-size: small;
+            bottom: -6px;
+            left: 80px;
+            position: absolute;
+
+        }
+
+        #show {
+            /* width: 20px; */
+            height: 20px;
+            /* top: 10%;
+            left: 50%; */
+            animation: moveleftright infinite;
+            animation-duration: 3s;
+        }
+
+        #show {
+            color: #fff;
+            text-shadow:
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px rgb(0, 225, 255),
+                0 0 42px rgb(0, 225, 255),
+                0 0 82px rgb(0, 225, 255),
+                0 0 92px rgb(0, 225, 255),
+                0 0 102px rgb(0, 225, 255),
+                0 0 151px rgb(0, 225, 255);
+        }
+
+        @keyframes moveleftright {
+
+            0%,
+            100% {
+                transform: translateX(-20px);
+            }
+
+            50% {
+                transform: translateX(70px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Add some shapes here -->
+    <div class="shape star"></div>
+    <div class="shape star"></div>
+    <div class="shape star"></div>
+    <div class="shape star"></div>
+    <div class="shape star"></div>
+    <div class="shape star"></div>
+    <div class="shape circle"></div>
+
+    <div class="container">
+        <h1 id="greeting">Welcome To 2K24</h1>
+        <br>
+        <h2 id="show"> </h2>
+        <br>
+        <p> Wishing you a year filled with joy, success, and new opportunities! 🎉 <br>▶نیا سال مبارک ہو◀<br>▶ନବବର୍ଷର
+            ଶୁଭେଚ୍ଛା◀<br>▶Happy New Year◀ </p>
+        <button onclick="navigateToAnotherPage()">Create Your Own >></button>
+        <textarea id="pageLink" readonly placeholder="Create Your Own.>> Generate Link. >> Copy Link."></textarea>
+        <div class="row">
+            <div class="col-6">
+                <button onclick="generateLink()">Generate Link</button>
+
+            </div>
+            <div class="col-6"> <button onclick="copyLink()">Copy Link</button>
+            </div>
+        </div>
+        <p id="thank">Thank You To The Makers @Azmat alli khan</p>
+
+    </div>
+    <script>
+        url = new URLSearchParams(window.location.search);
+        var name = url.get("pid");
+        fname = atob(name);
+        document.getElementById("show").innerHTML = fname;
+
+        function navigateToAnotherPage() {
+            // You can replace the URL with the actual destination
+            window.location.href = 'second-page.html';
+        }
+        function generateLink() {
+            const pageLink = window.location.href;
+            document.getElementById('pageLink').value = pageLink;
+        }
+
+        function copyLink() {
+            const textarea = document.getElementById('pageLink');
+            textarea.select();
+            document.execCommand('copy');
+            alert('Link copied to clipboard!');
+        }
+    </script>
+
+</body>
+
+</html>
